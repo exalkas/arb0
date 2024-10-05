@@ -1,14 +1,17 @@
 import { ethers } from "ethers";
-import { Pool, Route, Trade, TradeType } from "@uniswap/v3-sdk";
+import pkg from "@uniswap/v3-sdk";
 import { Fetcher } from "@uniswap/sdk";
 import { Token } from "@uniswap/sdk-core";
 import { Percent } from "@uniswap/sdk";
 import dotenv from "dotenv";
 
+const { Pool, Route, Trade, TradeType } = pkg;
+
 dotenv.config();
+// console.log("🚀  ~ ethers:", ethers);
 
 // Infura or Alchemy URL
-const provider = new ethers.providers.InfuraProvider(
+const provider = new ethers.InfuraProvider(
   "mainnet",
   process.env.INFURA_PROJECT_ID
 );
